@@ -1,0 +1,305 @@
+@use "./base/reset";
+@use "./base/variables" as *;
+@use "./icons/icons";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $lichtgrijs;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  max-width: 1780px;
+  width: 90%;
+  height: 110px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-size: 24px;
+    color: black;
+  }
+  nav {
+    ul {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+      text-transform: uppercase;
+
+      li {
+        padding: 5px 5px 0px 5px;
+        > a {
+          text-decoration: none;
+          color: black;
+        }
+        &.zoek:before {
+          font-family: icons;
+          content: "\e902";
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.slider {
+  background-image: url(../images/backgroundindex.jpeg);
+  height: 400px;
+  position: relative;
+  h2 {
+    color: $geel;
+    font-size: 80px;
+    font-weight: 700;
+    width: 450px;
+    position: absolute;
+    left: 130px;
+    top: 105px;
+  }
+}
+
+.tekst {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 100px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+  padding-bottom: 60px;
+  max-width: 1780px;
+
+  a {
+    text-decoration: none;
+    color: $links;
+  }
+
+  h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $titels;
+    padding-bottom: 60px;
+    font-weight: 700;
+  }
+  section {
+    width: 60%;
+  }
+  aside {
+    width: 30%;
+  }
+}
+
+.lijn {
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.fotos {
+  padding-top: 100px;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 60px;
+
+  article {
+    flex: 1 1 400px;
+    .imgholder {
+      position: relative;
+      .info {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        letter-spacing: 3px;
+        h3 {
+          color: $geel;
+          font-weight: 700;
+          font-size: 22px;
+          letter-spacing: 5px;
+          padding-bottom: 10px;
+        }
+        p {
+          color: white;
+          font-size: 15px;
+          padding-bottom: 10px;
+        }
+        span {
+          color: white;
+          font-size: 12px;
+        }
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.contact {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 100px;
+
+  h2 {
+    color: $titels;
+    font-size: 16px;
+    padding-top: 100px;
+    padding-bottom: 60px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .formulier {
+    width: 60%;
+  }
+
+  aside {
+    width: 30%;
+  }
+
+  form input,
+  form textarea {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    background-color: transparent;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  form button {
+    background-color: transparent;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border: 1px solid black;
+    padding: 10px 30px 10px 30px;
+    cursor: pointer;
+  }
+  aside {
+    p {
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .mailtel {
+      padding-top: 40px;
+      p {
+        display: inline-block;
+      }
+
+      > a {
+        text-decoration: none;
+        color: $links;
+        font-size: 14px;
+      }
+    }
+
+    ul {
+      padding-top: 50px;
+      display: flex;
+      gap: 20px;
+      color: white;
+
+      li {
+        background-color: $geel;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: icons;
+        &.youtube:before {
+          content: "\ea9d";
+        }
+        &.insta:before {
+          content: "\e901";
+        }
+        &.facebook:before {
+          content: "\e903";
+          font-size: 16px;
+        }
+        &.twitter:before {
+          content: "\f099";
+        }
+      }
+    }
+  }
+}
+
+footer {
+  p {
+    background-color: #3f3f3f;
+    font-size: 12px;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .tekst {
+    section {
+      width: 100%;
+      padding-bottom: 50px;
+    }
+
+    aside {
+      width: 100%;
+    }
+  }
+
+  .slider {
+    height: 300px;
+
+    h2 {
+      font-size: 60px;
+      width: 350px;
+      left: 80px;
+      top: 75px;
+    }
+  }
+  .contact {
+    .formulier {
+      width: 100%;
+    }
+
+    aside {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .slider {
+    height: 200px;
+
+    h2 {
+      font-size: 30px;
+      width: 190px;
+      left: 20px;
+      top: 45px;
+    }
+  }
+
+  header {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
